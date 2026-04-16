@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Jenson Nelson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-header {
+    padding: 84px 48px 34px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .page-header h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 6vw, 80px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  .page-header h1 span { color: var(--white); }
+  .page-header p {
+    color: rgba(245,244,240,0.5);
+    max-width: 560px;
+  }
+
+  /* Case study blocks */
+  .case-study {
+    padding: 34px 48px;
+    border-top: 1px solid var(--rule);
+  }
+  .case-study:first-of-type { border-top: none; }
+  .cs-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .cs-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 80px;
+  }
+  .cs-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+  }
+  .cs-role {
+    font-size: 13px;
+    color: var(--orange);
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+  }
+  .cs-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 40px;
+  }
+  .cs-img {
+    aspect-ratio: 4 / 3;
+    background: rgba(255,255,255,0.03);
+    border: 1px dashed rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(245,244,240,0.12);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .cs-img.full { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .cs-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .cs-body { max-width: 740px; }
+  .cs-body p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(245,244,240,0.7);
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+  .cs-body strong { color: var(--white); }
+  .cs-metric {
+    display: inline-block;
+    background: var(--mid);
+    border-left: 3px solid var(--orange);
+    padding: 16px 28px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  .cs-metric .num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .cs-metric .label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,244,240,0.4);
+    margin-top: 4px;
+  }
+  .cs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .cs-tag {
+    background: rgba(255,71,19,0.08);
+    border: 1px solid rgba(255,71,19,0.15);
+    padding: 5px 14px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(245,244,240,0.55);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    .page-header { padding: 70px 24px 28px; }
+    .case-study { padding: 25px 24px; }
+    .cs-images { grid-template-columns: 1fr; gap: 2px; }
+    .cs-images .cs-img { grid-column: 1 / -1 !important; aspect-ratio: 4 / 3; }
+    .cs-images .cs-img.full { aspect-ratio: 16 / 9; }
+    .cs-title { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">JENSON NELSON</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1 class="anim-1"><span>CREATIONS</span></h1>
+  <p class="anim-2">Real work, real research, real results.</p>
+</div>
+
+<!-- ============================== -->
+<!-- CASE STUDY: NIKE WOMEN'S FALL  -->
+<!-- ============================== -->
+<div class="case-study reveal" id="nike-womens">
+  <div class="cs-eyebrow">Theoretical · Apparel · Color</div>
+  <h2 class="cs-title">NIKE WOMEN'S FALL</h2>
+  <div class="cs-role">Seasonal Color & Apparel Concept · Self-Initiated</div>
+
+  <div class="cs-images">
+    <div class="cs-img full"><img src="work-nike-1.jpg" alt="Nike Women's Fall campaign"></div>
+    <div class="cs-img"><img src="work-nike-4.jpg" alt="Color and fabric swatch board"></div>
+    <div class="cs-img"><img src="work-nike-2.jpg" alt="Materials and process"></div>
+    <div class="cs-img full"><img src="work-nike-3.jpg" alt="Full collection on rack"></div>
+    <div class="cs-img" style="grid-column: 1 / 2;"><img src="work-nike-5.jpg" alt="Footwear colorway application"></div>
+    <div class="cs-img" style="grid-column: 2 / 3; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,71,19,0.1); padding: 32px;">
+      <div style="text-align: left;">
+        <div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,71,19,0.6); margin-bottom: 12px;">Color Story</div>
+        <div style="font-size: 13px; color: rgba(245,244,240,0.5); line-height: 1.8;">
+          Black · Slate · Peach · Blush<br>
+          Seafoam · Warm Stone · Taupe<br><br>
+          <span style="color: rgba(245,244,240,0.3); font-size: 11px; letter-spacing: 0.05em;">Palette built from quiet confidence —<br>earthy neutrals warmed by skin-adjacent tones,<br>lifted with a single cool accent.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-body">
+    <p>A self-initiated fall concept for Nike Women's, built to show how color, culture, and product work as one system. The process mirrors real in-house development: cultural research, moodboarding, palette building, graphic direction, and product application.</p>
+    <p>The goal was to show the full arc of thinking, not just polished mockups, but the <strong>decisions behind them.</strong> Why this palette. Why this material direction. Why these graphics on these silhouettes. The same decision-making that turns inspiration into product people actually buy and wear.</p>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Color Palette Development</span>
+      <span class="cs-tag">Cultural Research</span>
+      <span class="cs-tag">Apparel Graphics</span>
+      <span class="cs-tag">Product Mockups</span>
+      <span class="cs-tag">Seasonal Concepting</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- CASE STUDY: KILLER BURGER       -->
+<!-- ============================== -->
+<div class="case-study reveal" id="killer-burger">
+  <div class="cs-eyebrow">Art Direction · Brand · Photography</div>
+  <h2 class="cs-title">KILLER BURGER</h2>
+  <div class="cs-role">Art Direction & Brand Identity · Portland, OR</div>
+
+  <div class="cs-images">
+    <div class="cs-img full"><img src="work-kb-1.jpg" alt="Hero burger — layered, lit, black background"></div>
+    <div class="cs-img"><img src="work-kb-4.jpg" alt="Lifestyle — burger, fries, full spread"></div>
+    <div class="cs-img"><img src="work-kb-5.jpg" alt="Craft beer lineup with bokeh"></div>
+  </div>
+
+  <div class="cs-body">
+    <p>Directed the visual identity refresh and product photography for Killer Burger — Portland's cult-favorite burger chain. The brief: make the food look as aggressive and unapologetic as the brand sounds.</p>
+    <p><strong>Art Direction.</strong> Built the entire shoot around one principle — black background, dramatic light, zero distractions. Every burger shot isolated to let the layering, texture, and color do the talking. Fries, drinks, and lifestyle shots followed the same system: dark, warm, confident.</p>
+    <p><strong>Brand.</strong> Worked on the identity system anchored by the "Commit to the Burger" tagline and bomb mark. The brand voice matches the product — bold, slightly unhinged, completely committed. Applied across menu, signage, cups, and digital.</p>
+    <p><strong>Outcome.</strong> A visual system that gave a Portland burger joint the kind of photography usually reserved for fine dining — without losing any of the grit that makes it Killer Burger.</p>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Art Direction</span>
+      <span class="cs-tag">Product Photography</span>
+      <span class="cs-tag">Brand Identity</span>
+      <span class="cs-tag">Food & Beverage</span>
+      <span class="cs-tag">Visual Systems</span>
+      <span class="cs-tag">Portland</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- CASE STUDY: MODUS REBRAND      -->
+<!-- ============================== -->
+<div class="case-study reveal" id="modus">
+  <div class="cs-eyebrow">Brand · Identity · Strategy</div>
+  <h2 class="cs-title">MODUS</h2>
+  <div class="cs-role">Strategic Rebrand · Formerly CT Defense</div>
+
+  <div class="cs-images">
+    <div class="cs-img full"><img src="work-modus-1.jpg" alt="Modus rebrand"></div>
+    <div class="cs-img"><img src="work-modus-2.jpg" alt="Modus business card — embossed cube mark on dark stock"></div>
+    <div class="cs-img"><img src="work-modus-3.jpg" alt="Modus mobile infrastructure unit — Florida Division of Emergency Management"></div>
+  </div>
+
+  <div class="cs-body">
+    <p>CT Defense was an emergency-services company with a military-centric identity that didn't match where they were headed. I led the full strategic rebrand: new name, new mark, new identity system, new everything.</p>
+    <p>I developed <strong>Modus</strong> — the name, logo, and a modular cube mark designed for scalability and cohesion. Then I built out the complete collateral system: investor sales deck, RFP templates, brochures, vehicle wraps, signage, and presentation materials. The brand identity I created anchored their pitch to investors and their pilot programs with municipal health departments.</p>
+
+    <div class="cs-metric">
+      <div class="num">$1.2M</div>
+      <div class="label">Private funding secured within two months of rebrand</div>
+    </div>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Naming</span>
+      <span class="cs-tag">Brand Identity</span>
+      <span class="cs-tag">Logo & Mark Design</span>
+      <span class="cs-tag">Investor Deck</span>
+      <span class="cs-tag">Collateral System</span>
+      <span class="cs-tag">Vehicle Wraps</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- CASE STUDY: NOSTOS              -->
+<!-- ============================== -->
+<div class="case-study reveal" id="nostos">
+  <div class="cs-eyebrow">Brand · Identity · Packaging</div>
+  <h2 class="cs-title">NOSTOS INTERNATIONAL GROCERY</h2>
+  <div class="cs-role">Full Brand System · Logo through Signage</div>
+
+  <div class="cs-images">
+    <div class="cs-img full"><img src="work-nostos-1.jpg" alt="Nostos mood board — grocery interiors, produce, materials, tile"></div>
+    <div class="cs-img"><img src="work-nostos-2.jpg" alt="Nostos logo on linen texture"></div>
+    <div class="cs-img"><img src="work-nostos-4.jpg" alt="Nostos brand guide — material direction, logo construction, texture rationale"></div>
+  </div>
+
+  <div class="cs-body">
+    <p>Nostos is a high-end international grocery chain launching in Panama with expansion into Europe and the U.S. I directed the full brand identity — everything from the logo to the building materials.</p>
+    <p>The system I built includes: logo, color palette, typography, packaging, signage, staff uniforms, and in-store materials — all anchored in <strong>cultural storytelling and modular systems</strong> designed to flex across digital and physical retail environments, regions, and formats. This wasn't a logo project. It was a complete ecosystem built to scale.</p>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Brand Identity</span>
+      <span class="cs-tag">Logo Design</span>
+      <span class="cs-tag">Packaging</span>
+      <span class="cs-tag">Signage & Wayfinding</span>
+      <span class="cs-tag">Uniform Design</span>
+      <span class="cs-tag">Cultural Storytelling</span>
+      <span class="cs-tag">Scalable Systems</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- CASE STUDY: SEASONAL / 99 CENTS -->
+<!-- ============================== -->
+<div class="case-study reveal" id="seasonal">
+  <div class="cs-eyebrow">Graphics · Color · Product</div>
+  <h2 class="cs-title">SEASONAL PRODUCT & PACKAGING</h2>
+  <div class="cs-role">Senior Graphic & Product Designer · 99 Cents Only Stores</div>
+
+  <div class="cs-images">
+    <div class="cs-img full"><img src="work-seasonal-1.jpg" alt="Seasonal product design"></div>
+    <div class="cs-img"><img src="work-seasonal-2.jpg" alt="Rustic Holiday — seasonal display, red and green product wall"></div>
+    <div class="cs-img"><img src="work-seasonal-3.jpg" alt="Peace & Harmony — gold and red holiday collection"></div>
+    <div class="cs-img full"><img src="work-seasonal-4.jpg" alt="Marshmallow Pop — pastel holiday collection, teal and pink"></div>
+  </div>
+
+  <div class="cs-body">
+    <p>At 99 Cents Only Stores, I was the designer responsible for seasonal product graphics, packaging, and in-store campaigns across every product category — toys, beauty, apparel, accessories, and home. Hundreds of SKUs a year, each one designed and spec'd by me.</p>
+    <p>I built <strong>trend-driven seasonal graphic systems</strong> fusing color forecasting, cultural insight, and high-volume retail execution. Managed international vendor communication — coordinating timelines, specs, and production files to cut production turnaround by 25% without quality compromise. Partnered with merchandising and sourcing via PLM and SAP to align design intent with pricing and manufacturing constraints.</p>
+
+    <div class="cs-metric">
+      <div class="num">$19.83M</div>
+      <div class="label">Category sales in 2019 · 21% YoY growth</div>
+    </div>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Seasonal Color Systems</span>
+      <span class="cs-tag">Product Graphics</span>
+      <span class="cs-tag">Packaging Design</span>
+      <span class="cs-tag">Vendor Management</span>
+      <span class="cs-tag">PLM & SAP</span>
+      <span class="cs-tag">Retail at Scale</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- CASE STUDY: POP PRESSURE        -->
+<!-- ============================== -->
+<div class="case-study reveal" id="pop-pressure">
+  <div class="cs-eyebrow">Editorial · Art Direction · Styling</div>
+  <h2 class="cs-title">KNIT POP</h2>
+  <div class="cs-role">Art Direction & Styling · Jordan Brand Editorial</div>
+
+  <div class="cs-images">
+    <div class="cs-img full"><img src="work-jordan-1.jpg" alt="Full-body editorial — Jordan fair isle sweater, Warhol-inspired sneakers, concrete hallway"></div>
+    <div class="cs-img"><img src="work-jordan-2.jpg" alt="Detail — knitwear pattern, red accents, truck interior"></div>
+    <div class="cs-img" style="aspect-ratio:4/3; border:none;">
+      <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
+        <source src="work-jordan-vid1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="cs-img" style="aspect-ratio:4/3; border:none;">
+      <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
+        <source src="work-jordan-vid2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="cs-img full" style="aspect-ratio:16/9; border:none;">
+      <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover; display:block;">
+        <source src="work-jordan-vid3.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="cs-body">
+    <p>A visual study merging pop art language with contemporary sport styling. The project explores how bold, referential color systems translate onto wearable product.</p>
+
+    <p><strong>Concept.</strong> Warhol treated repetition and color as a system. Jordan treats product as culture. This sits between the two — where graphic art stops being framed and starts being worn.</p>
+
+    <p><strong>Design Approach.</strong> Built around saturated, high-contrast color blocking. Warhol-inspired palette applied to footwear as a statement surface. Jordan sweater grounds the look in sport heritage. Composition balances control and spontaneity — structured pose, but relaxed energy. Lighting leans natural, letting color do the heavy lifting.</p>
+
+    <p><strong>Execution.</strong> Shot in minimal environments to isolate product and color relationships. Styling stayed intentional but unfussy — letting the tension between art reference and streetwear identity carry the frame.</p>
+
+    <p><strong>Outcome.</strong> The series reads like a campaign because it was built like one. It communicates that knitwear can carry the same weight as a sneaker drop when the art direction treats it that way.</p>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Art Direction</span>
+      <span class="cs-tag">Editorial Styling</span>
+      <span class="cs-tag">Video</span>
+      <span class="cs-tag">Color Blocking</span>
+      <span class="cs-tag">Jordan Brand</span>
+      <span class="cs-tag">Streetwear</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Jenson Nelson · Portland, OR</p>
+  <nav>
+    <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+    <a href="about.html">About</a> &nbsp;&middot;&nbsp;
+    <a href="contact.html">Contact</a>
+  </nav>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

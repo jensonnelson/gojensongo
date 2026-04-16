@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Jenson Nelson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-page {
+    padding: 112px 48px 70px;
+  }
+  .contact-page h1 {
+    font-family: var(--serif);
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin-bottom: 64px;
+  }
+  .contact-page h1 span { color: var(--orange); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* Form */
+  .contact-form h2 {
+    font-family: var(--serif);
+    font-size: 32px;
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+  }
+  .form-hp { position: absolute; left: -5000px; }
+  .form-field {
+    margin-bottom: 22px;
+  }
+  .form-field label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,244,240,0.45);
+    margin-bottom: 10px;
+  }
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    background: var(--mid);
+    border: 1px solid var(--rule);
+    color: var(--white);
+    padding: 14px 16px;
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--orange);
+  }
+  .form-field textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+  .form-submit {
+    background: var(--orange);
+    color: var(--black);
+    border: none;
+    padding: 16px 32px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { opacity: 0.85; }
+
+  /* Side column */
+  .contact-side h2 {
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+  .contact-side .side-intro {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,244,240,0.55);
+    margin-bottom: 28px;
+    max-width: 340px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 24px;
+    background: var(--mid);
+    text-decoration: none;
+    color: var(--white);
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-link::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 3px;
+    height: 0;
+    background: var(--orange);
+    transition: height 0.3s ease;
+  }
+  .contact-link:hover::before { height: 100%; }
+  .contact-link:hover { opacity: 1; }
+  .contact-link .label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,244,240,0.35);
+  }
+  .contact-link .value {
+    font-size: 14px;
+    color: var(--white);
+    margin-top: 2px;
+  }
+  .contact-link .arrow {
+    margin-left: auto;
+    color: var(--orange);
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+  .contact-link:hover .arrow { transform: translateX(4px); }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  }
+  @media (max-width: 600px) {
+    .contact-page { padding: 91px 24px 42px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">JENSON NELSON</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="contact-page">
+  <h1 class="anim-1">LET'S <span>TALK</span></h1>
+
+  <div class="contact-grid">
+    <!-- FORM -->
+    <div class="contact-form anim-2">
+      <h2>Let's Talk</h2>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact?success=true">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="form-hp">
+          <label>Do not fill this out if you are human: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-field">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- SIDE -->
+    <div class="contact-side anim-3">
+      <div class="contact-links">
+        <a href="mailto:jensonnelson@gmail.com" class="contact-link">
+          <div>
+            <div class="label">Email</div>
+            <div class="value">jensonnelson@gmail.com</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/jensonnelson/" target="_blank" rel="noopener" class="contact-link">
+          <div>
+            <div class="label">LinkedIn</div>
+            <div class="value">linkedin.com/in/jensonnelson</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Jenson Nelson · Portland, OR</p>
+  <nav>
+    <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+    <a href="work.html">Work</a> &nbsp;&middot;&nbsp;
+    <a href="about.html">About</a>
+  </nav>
+</footer>
+
+</body>
+</html>
