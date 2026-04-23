@@ -61,6 +61,12 @@
     padding-left: 20px;
     margin: 0;
   }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+  }
   .scroll-cue {
     position: absolute;
     bottom: 36px; right: 48px;
@@ -196,6 +202,7 @@
   }
   @media (max-width: 600px) {
     .hero { padding: 0 24px 42px; }
+    .hero-actions { gap: 12px; }
     .stats { grid-template-columns: 1fr; }
     .stat { padding: 28px 24px; }
     .philosophy { padding: 32px 24px; font-size: 17px; }
@@ -220,6 +227,10 @@
     <div class="hero-eyebrow anim-1">Designer & Maker · Portland, OR</div>
     <h1 class="hero-title anim-2">I MAKE THE <span>THING.</span><br>NOT JUST THE PICTURE OF IT.</h1>
     <p class="hero-sub anim-3">Color, product, brand. Research to retail, 13 years deep.</p>
+    <div class="hero-actions anim-4">
+      <a href="work.html" class="btn-primary">View Selected Work</a>
+      <a href="contact.html" class="btn-secondary">Contact</a>
+    </div>
   </div>
   <div class="scroll-cue">Scroll</div>
 </div>
@@ -245,6 +256,11 @@
       <div class="stat-label">Years Making<br>Color, Graphics & Product</div>
     </div>
   </div>
+</section>
+
+<section>
+  <div class="section-label">Approach</div>
+  <div class="philosophy reveal">I’ve worked across the <em>full retail design process</em>, from early concept and color through product development, packaging, vendor negotiations, production, approvals, and shelf. That end-to-end work is where I’m strongest and where I feel most at home.</div>
 </section>
 
 <!-- WORK PREVIEW -->
@@ -279,7 +295,7 @@
 </section>
 
 <footer>
-  <p>&copy; 2025 Jenson Nelson · Portland, OR</p>
+  <p>&copy; 2026 Jenson Nelson · Portland, OR</p>
   <nav>
     <a href="work.html">Work</a> &nbsp;&middot;&nbsp;
     <a href="about.html">About</a> &nbsp;&middot;&nbsp;

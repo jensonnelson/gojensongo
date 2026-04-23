@@ -15,7 +15,7 @@
   .contact-page h1 {
     font-family: var(--serif);
     font-size: clamp(48px, 7vw, 96px);
-    line-height: 0.95;
+    line-height: 1.02;
     letter-spacing: 0.02em;
     margin-bottom: 64px;
   }
@@ -27,14 +27,18 @@
     gap: 80px;
     align-items: start;
   }
+  .success-message {
+    display: none;
+    margin-bottom: 28px;
+    padding: 18px 20px;
+    background: rgba(255,71,19,0.08);
+    border: 1px solid rgba(255,71,19,0.18);
+    border-left: 3px solid var(--orange);
+    color: rgba(245,244,240,0.88);
+  }
+  .success-message.visible { display: block; }
 
   /* Form */
-  .contact-form h2 {
-    font-family: var(--serif);
-    font-size: 32px;
-    letter-spacing: 0.03em;
-    margin-bottom: 28px;
-  }
   .form-hp { position: absolute; left: -5000px; }
   .form-field {
     margin-bottom: 22px;
@@ -85,20 +89,6 @@
   .form-submit:hover { opacity: 0.85; }
 
   /* Side column */
-  .contact-side h2 {
-    font-family: var(--serif);
-    font-size: 22px;
-    letter-spacing: 0.04em;
-    margin-bottom: 12px;
-  }
-  .contact-side .side-intro {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(245,244,240,0.55);
-    margin-bottom: 28px;
-    max-width: 340px;
-  }
-
   .contact-links {
     display: flex;
     flex-direction: column;
@@ -150,7 +140,7 @@
     .contact-grid { grid-template-columns: 1fr; gap: 56px; }
   }
   @media (max-width: 600px) {
-    .contact-page { padding: 91px 24px 42px; }
+    .contact-page { padding: 116px 24px 42px; }
   }
 </style>
 </head>
@@ -172,8 +162,8 @@
   <div class="contact-grid">
     <!-- FORM -->
     <div class="contact-form anim-2">
-      <h2>Let's Talk</h2>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact?success=true">
+      <div class="success-message" id="success-message">Thanks, your message came through. I’ll be in touch soon.</div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="contact.html?success=true">
         <input type="hidden" name="form-name" value="contact">
         <p class="form-hp">
           <label>Do not fill this out if you are human: <input name="bot-field"></label>
@@ -222,7 +212,7 @@
 </div>
 
 <footer>
-  <p>&copy; 2025 Jenson Nelson · Portland, OR</p>
+  <p>&copy; 2026 Jenson Nelson · Portland, OR</p>
   <nav>
     <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
     <a href="work.html">Work</a> &nbsp;&middot;&nbsp;
@@ -230,5 +220,12 @@
   </nav>
 </footer>
 
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('success') === 'true') {
+    const success = document.getElementById('success-message');
+    if (success) success.classList.add('visible');
+  }
+</script>
 </body>
 </html>
