@@ -160,7 +160,7 @@ footer {
 }
 footer p {
   font-size: 12px;
-  color: rgba(245,244,240,0.28);
+  color: rgba(245,244,240,0.38);
   margin: 0;
   max-width: 100%;
 }
@@ -169,7 +169,7 @@ footer nav a {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245,244,240,0.25);
+  color: rgba(245,244,240,0.36);
 }
 footer nav a:hover { color: var(--white); opacity: 1; }
 
