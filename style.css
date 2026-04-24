@@ -25,7 +25,7 @@ body {
   background: var(--black);
   color: var(--white);
   font-family: var(--body);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   background-image:
@@ -56,7 +56,7 @@ nav {
 }
 .nav-name {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 0.12em;
   color: var(--white);
   text-decoration: none;
@@ -65,7 +65,7 @@ nav {
 .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
 .nav-links a {
   color: rgba(245,244,240,0.45);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -86,7 +86,7 @@ nav {
 .nav-cta:hover { background: #e03e10 !important; opacity: 1 !important; transform: translateY(-1px); }
 
 /* === SHARED SECTION === */
-section { padding: 84px 48px; border-top: 1px solid var(--rule); }
+section { padding: 76px 48px; border-top: 1px solid var(--rule); }
 
 .section-label {
   font-size: 10px;
@@ -163,6 +163,8 @@ footer p {
   color: rgba(245,244,240,0.38);
   margin: 0;
   max-width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 footer nav { position: static; border: none; background: none; backdrop-filter: none; padding: 0; }
 footer nav a {
@@ -210,16 +212,16 @@ footer nav a:hover { color: var(--white); opacity: 1; }
     flex-direction: column;
     align-items: flex-start;
   }
-  .nav-name { font-size: 20px; }
+  .nav-name { font-size: 22px; }
   .nav-links {
     width: 100%;
     gap: 10px 14px;
     justify-content: flex-start;
   }
-  .nav-links a { font-size: 10px; }
+  .nav-links a { font-size: 11px; }
   .nav-links .nav-hide { display: none; }
   .nav-cta { padding: 7px 16px; }
-  section { padding: 56px 24px; }
+  section { padding: 50px 24px; }
   footer { padding: 32px 24px; flex-direction: column; gap: 16px; text-align: center; }
   footer nav {
     width: 100%;
