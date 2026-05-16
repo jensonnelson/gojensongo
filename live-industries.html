@@ -8,26 +8,29 @@
       name="description"
       content="A portfolio case study for the Live.Industries 2026 brand identity system."
     >
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="live-industries.css">
   </head>
-  <body>
-    <header class="site-header" aria-label="Case study navigation">
-      <a class="brand-mark" href="#top" aria-label="Live.Industries case study">
-        <img
-          src="assets/live-industries/logo/live-industries-logo-wm.png"
-          alt="Live.Industries"
-        >
-      </a>
-      <nav>
-        <a href="#system">System</a>
-        <a href="#slideshow">Slides</a>
-        <a href="#outcome">Outcome</a>
-      </nav>
-    </header>
+  <body class="live-industries-page">
+    <nav>
+      <a href="index.html" class="nav-name">JENSON NELSON</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
+          <a class="back-link" href="work.html">Back to Work</a>
+          <img
+            class="project-logo"
+            src="assets/live-industries/logo/live-industries-logo-wm.png"
+            alt="Live.Industries"
+          >
           <p class="eyebrow">Brand Identity Standards</p>
           <h1>Designing a disciplined operating system for live production.</h1>
           <p class="lead">
@@ -236,6 +239,15 @@
         </p>
       </section>
     </main>
+
+    <footer>
+      <p>&copy; 2026 Jenson Nelson · Portland, OR</p>
+      <nav>
+        <a href="work.html">Work</a> &nbsp;&middot;&nbsp;
+        <a href="about.html">About</a> &nbsp;&middot;&nbsp;
+        <a href="contact.html">Contact</a>
+      </nav>
+    </footer>
 
     <script src="live-industries.js"></script>
   </body>
