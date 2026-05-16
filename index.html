@@ -199,6 +199,87 @@
     margin: 0;
     line-height: 1.65;
   }
+  .preview-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1.18fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+    min-height: 390px;
+    padding: clamp(32px, 5vw, 56px);
+    background:
+      radial-gradient(circle at 8% 0%, rgba(255,71,19,0.18), transparent 34%),
+      linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
+    border: 1px solid rgba(245,244,240,0.08);
+  }
+  .preview-card.featured::before {
+    width: 4px;
+  }
+  .preview-card.featured h4 {
+    font-family: var(--serif);
+    font-size: clamp(44px, 7vw, 88px);
+    line-height: 0.92;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+  }
+  .preview-card.featured p {
+    max-width: 520px;
+    color: rgba(245,244,240,0.68);
+    font-size: 15px;
+  }
+  .preview-card.featured .eyebrow {
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+  .featured-copy {
+    position: relative;
+    z-index: 2;
+  }
+  .featured-logo {
+    width: min(360px, 82vw);
+    height: auto;
+    margin-bottom: 34px;
+    filter: invert(1) brightness(1.85);
+    opacity: 0.92;
+  }
+  .featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .featured-tags span {
+    border: 1px solid rgba(245,244,240,0.14);
+    color: rgba(245,244,240,0.54);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    padding: 9px 11px;
+    text-transform: uppercase;
+  }
+  .featured-visual {
+    position: relative;
+    min-height: 280px;
+  }
+  .featured-visual img {
+    width: 100%;
+    border: 1px solid rgba(245,244,240,0.12);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.36);
+  }
+  .featured-visual::after {
+    content: "View Case Study";
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    background: var(--orange);
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 10px 12px;
+    text-transform: uppercase;
+  }
 
   .home-cta {
     text-align: center;
@@ -208,6 +289,9 @@
   @media (max-width: 900px) {
     .stats { grid-template-columns: 1fr 1fr; }
     .preview-grid { grid-template-columns: 1fr; }
+    .preview-card.featured {
+      grid-template-columns: 1fr;
+    }
   }
   @media (max-width: 600px) {
     .hero { padding: 0 24px 42px; }
@@ -215,6 +299,19 @@
     .stats { grid-template-columns: 1fr; }
     .stat { padding: 28px 24px; }
     .philosophy { padding: 32px 24px; font-size: 17px; }
+    .preview-card {
+      padding: 30px 24px;
+    }
+    .preview-card.featured {
+      min-height: 0;
+      padding: 30px 24px;
+    }
+    .featured-logo {
+      margin-bottom: 26px;
+    }
+    .featured-visual {
+      min-height: 0;
+    }
   }
 </style>
 <style>
@@ -285,15 +382,33 @@
 <section>
   <div class="section-label">Selected Work</div>
   <div class="preview-grid reveal">
+    <a href="live-industries.html" class="preview-card featured">
+      <div class="featured-copy">
+        <img
+          class="featured-logo"
+          src="assets/live-industries/logo/live-industries-logo-wm.png"
+          alt="Live.Industries"
+        >
+        <div class="eyebrow">Featured · Brand Identity · Standards</div>
+        <h4>Live.Industries</h4>
+        <p>A restrained industrial brand system built for live production: logo rules, typography, color, voice, and a production-ready standards guide.</p>
+        <div class="featured-tags" aria-label="Project highlights">
+          <span>Identity</span>
+          <span>Guidelines</span>
+          <span>Systems</span>
+        </div>
+      </div>
+      <div class="featured-visual" aria-hidden="true">
+        <img
+          src="assets/live-industries/brand-kit/live-industries-brand-kit-01.jpg"
+          alt=""
+        >
+      </div>
+    </a>
     <a href="work.html#nike-womens" class="preview-card">
       <div class="eyebrow">Theoretical · Apparel · Color</div>
       <h4>Nike Women's Fall</h4>
       <p>Fall color and apparel concept, from cultural research through market-ready product mockups.</p>
-    </a>
-    <a href="live-industries.html" class="preview-card">
-      <div class="eyebrow">Brand · Identity · Systems</div>
-      <h4>Live.Industries</h4>
-      <p>Brand identity standards built around precision, restraint, and operational clarity.</p>
     </a>
     <a href="work.html#nostos" class="preview-card">
       <div class="eyebrow">Brand · Identity · Packaging</div>
