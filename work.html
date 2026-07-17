@@ -86,6 +86,16 @@
   }
   .cs-img.full { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
   .cs-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .color-note {
+    display: inline-block;
+    max-width: 250px;
+    margin-top: 12px;
+    color: rgba(245,244,240,0.58);
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 1.45;
+    text-transform: none;
+  }
   .cs-body { max-width: 740px; }
   .cs-body p {
     font-size: 16px;
@@ -131,6 +141,59 @@
     color: rgba(245,244,240,0.55);
     text-transform: uppercase;
   }
+  .concept-preview {
+    display: block;
+    min-height: 340px;
+    background:
+      radial-gradient(120% 90% at 30% 20%, #2e2b27, #211f1c 60%, #171512 100%);
+    border: 1px solid rgba(255,71,19,0.14);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+  .concept-preview.full { grid-column: 1 / -1; }
+  .concept-preview::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.45;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .concept-preview::after {
+    content: '';
+    position: absolute;
+    left: -8%;
+    right: -8%;
+    bottom: 34%;
+    border-top: 3px solid rgba(228,223,209,0.36);
+    transform: rotate(-4deg);
+  }
+  .concept-preview-content {
+    position: relative;
+    z-index: 1;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 34px;
+  }
+  .concept-preview-title {
+    font-family: var(--serif);
+    font-size: clamp(58px, 12vw, 118px);
+    line-height: 0.82;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #e4dfd1;
+  }
+  .concept-preview-meta {
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
 
   @media (max-width: 600px) {
     .page-header { padding: 136px 24px 28px; }
@@ -160,6 +223,37 @@
 </div>
 
 <!-- ============================== -->
+<!-- CASE STUDY: AF1 BLACKTOP       -->
+<!-- ============================== -->
+<div class="case-study reveal" id="af1-blacktop">
+  <div class="cs-eyebrow">Self-Initiated · Footwear · Material Concept</div>
+  <h2 class="cs-title">BLACKTOP</h2>
+  <div class="cs-role">Air Force 1 Material Study · Street / Summer '28</div>
+
+  <div class="cs-images">
+    <a href="af1-blacktop-concept.html" class="concept-preview full" aria-label="Open Blacktop Air Force 1 material concept">
+      <div class="concept-preview-content">
+        <div class="concept-preview-title">Blacktop</div>
+        <div class="concept-preview-meta">Open Full Material Study</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="cs-body">
+    <p>A self-initiated Air Force 1 material concept built around the shoe's outdoor-court origin and street-life afterlife. The study translates asphalt, heat, wear, and sun-bleached court lines into a material and finish direction.</p>
+    <p><strong>The read:</strong> the AF1 consumer treats the shoe as a canvas for personal history. Blacktop keeps that cultural weight intact while exploring tumbled leather, nubuck, Flyleather hits, Nike Grind rubber, and low-satin finishes that can age without looking careless.</p>
+
+    <div class="cs-tags">
+      <span class="cs-tag">Footwear Concept</span>
+      <span class="cs-tag">Material Direction</span>
+      <span class="cs-tag">CMF</span>
+      <span class="cs-tag">Consumer Read</span>
+      <span class="cs-tag">Sustainability</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== -->
 <!-- CASE STUDY: NIKE WOMEN'S FALL  -->
 <!-- ============================== -->
 <div class="case-study reveal" id="nike-womens">
@@ -178,8 +272,8 @@
         <div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,71,19,0.6); margin-bottom: 12px;">Color Story</div>
         <div style="font-size: 13px; color: rgba(245,244,240,0.5); line-height: 1.8;">
           Black · Slate · Peach · Blush<br>
-          Seafoam · Warm Stone · Taupe<br><br>
-          <span style="color: rgba(245,244,240,0.5); font-size: 11px; letter-spacing: 0.05em; line-height: 1.65; display: inline-block; max-width: 240px;">Palette built from quiet confidence —<br>earthy neutrals warmed by skin-adjacent tones,<br>lifted with a single cool accent.</span>
+          Seafoam · Warm Stone · Taupe
+          <span class="color-note">Fall neutrals, soft skin tones, and one cool seafoam hit to keep it fresh.</span>
         </div>
       </div>
     </div>
@@ -187,7 +281,7 @@
 
   <div class="cs-body">
     <p>A self-initiated fall concept for Nike Women's, built to show how color, culture, and product work as one system. The process mirrors real in-house development: cultural research, moodboarding, palette building, graphic direction, and product application.</p>
-    <p>The goal was to show the full arc of thinking, not just polished mockups, but the <strong>decisions behind them.</strong> Why this palette. Why this material direction. Why these graphics on these silhouettes. The same decision-making that turns inspiration into product people actually buy and wear.</p>
+    <p>The goal was to show the full arc of thinking, not just polished mockups, but the <strong>decisions behind them.</strong> Why this palette. Why this material direction. Why these graphics on these silhouettes. The same decision-making that turns inspiration into product people buy and wear.</p>
 
     <div class="cs-tags">
       <span class="cs-tag">Color Palette Development</span>

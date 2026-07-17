@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blacktop — Air Force 1 Material Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Jura:wght@500;600;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0a0a;--ink:#eae7e1;--muted:#7c7873;--line:#242220;--orange:#fa5400;--asphalt:#211f1c;--asphalt2:#2e2b27;--leather:#34302a;--suede:#6f6b5c;--bleach:#e4dfd1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Work Sans",system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:"Jura",sans-serif;font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:.68rem;color:var(--orange)}
+  .hero{position:relative;min-height:520px;border-bottom:1px solid var(--line);overflow:hidden;display:flex;align-items:flex-end}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 30% 20%,var(--asphalt2),var(--asphalt) 60%,#171512 100%)}
+  .hero::after{content:"";position:absolute;left:-8%;right:-8%;bottom:34%;border-top:3px solid rgba(228,223,209,.42);transform:rotate(-4deg)}
+  .court-arc{position:absolute;right:-90px;bottom:8%;width:340px;height:340px;border:3px solid rgba(228,223,209,.28);border-radius:50%;clip-path:inset(0 0 50% 0)}
+  .hero-copy{position:relative;z-index:1;padding:0 0 44px}
+  .tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .tag{font-family:"Jura",sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.62rem;color:var(--ink);border:1px solid #3a352d;padding:6px 11px;background:rgba(10,10,10,.35)}
+  .tag.hot{color:var(--orange);border-color:rgba(250,84,0,.5)}
+  h1{font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:clamp(4rem,15vw,10rem);line-height:.82;text-transform:uppercase;color:var(--bleach)}
+  .thesis{padding:52px 0 44px;border-bottom:1px solid var(--line);max-width:760px}
+  .thesis .eyebrow{display:block;margin-bottom:20px}
+  .thesis p{font-size:1.3rem;line-height:1.4}
+  .thesis b{font-weight:500}.thesis .o{color:var(--orange)}
+  .grid{display:grid;grid-template-columns:.9fr 1.1fr;border-bottom:1px solid var(--line)}
+  .panel{padding:52px 44px}.panel.left{border-right:1px solid var(--line)}
+  h2{font-family:"Big Shoulders Display",sans-serif;font-weight:700;text-transform:uppercase;font-size:1.6rem;margin-bottom:22px}
+  h2 .n{color:var(--orange);font-size:1rem;vertical-align:top;margin-right:10px}
+  .read-block{padding:18px 0;border-bottom:1px solid var(--line)}
+  .read-block:last-child{border-bottom:0}
+  .read-k,.own-k{font-family:"Jura",sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.66rem;color:var(--muted);margin-bottom:8px}
+  .read-v,.own-v{font-size:.96rem;color:#c6c1ba}.read-v b,.own-v b{color:var(--ink);font-weight:500}
+  .board{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .swatch{border:1px solid var(--line);background:#111;overflow:hidden}
+  .chip{height:104px;position:relative}
+  .chip::after{content:"";position:absolute;inset:0;opacity:.45;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+  .leather{background:radial-gradient(130% 120% at 30% 25%,var(--leather),#201d18)}
+  .suede{background:linear-gradient(150deg,#7a7566,#5f5b4d)}
+  .fly{background:linear-gradient(135deg,#191714,#4f4a40 38%,#171512 39%,#2d2a25 62%,#d8d0bd 63%,#f1eadc)}
+  .bleach{background:linear-gradient(160deg,#eae5d7,#cfc9b8)}
+  .label{padding:12px 13px 14px}.name{font-family:"Jura",sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem}.spec{font-size:.78rem;color:var(--muted);margin-top:5px;line-height:1.45}.placement{display:inline-block;margin-top:9px;font-family:"Jura",sans-serif;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+  .finish-note{margin-top:18px;font-size:.86rem;color:var(--muted);border-left:2px solid var(--orange);padding-left:14px}.finish-note b{color:var(--ink);font-weight:500}
+  .own{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+  .own-card{padding:40px 32px;border-right:1px solid var(--line)}.own-card:last-child{border-right:0}.own-k{color:var(--orange)}
+  footer{padding:40px 0 60px}.foot-row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}.sig{font-family:"Big Shoulders Display",sans-serif;font-weight:700;text-transform:uppercase;font-size:1.4rem}.foot-link{color:var(--orange);text-decoration:none;font-family:"Jura",sans-serif;font-weight:600;letter-spacing:.1em;font-size:.8rem}.src{margin-top:20px;font-size:.72rem;color:#575450;max-width:74ch;line-height:1.5}
+  @media (max-width:860px){.grid,.own{grid-template-columns:1fr}.panel.left,.own-card{border-right:0;border-bottom:1px solid var(--line)}.panel{padding:40px 28px}.hero{min-height:430px}}
+  @media (max-width:520px){.board{grid-template-columns:1fr}h1{font-size:22vw}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="court-arc"></div>
+      <div class="hero-copy">
+        <div class="tag-row">
+          <span class="tag hot">Self-initiated concept</span>
+          <span class="tag">Air Force 1</span>
+          <span class="tag">Street · Summer '28</span>
+        </div>
+        <h1>Blacktop</h1>
+      </div>
+    </section>
+
+    <section class="thesis">
+      <span class="eyebrow">The territory</span>
+      <p>The AF1 was born on the outdoor court in 1982 and grew up on the street. <b>Blacktop</b> is a material study for that seam: not the polished leather of a dress execution, not technical nylon, but the AF1 as it is actually lived in. <span class="o">Court heritage, weathered by the sidewalk.</span></p>
+    </section>
+
+    <section class="grid">
+      <div class="panel left">
+        <h2><span class="n">01</span>The read</h2>
+        <div class="read-block"><div class="read-k">Consumer</div><div class="read-v">The street consumer treats the AF1 as a <b>canvas for their own history</b>. They crease it, scrub it, wear it to death or keep it box-fresh. They want a shoe that looks like it earned its wear, not one that looks beat.</div></div>
+        <div class="read-block"><div class="read-k">Archive — reference, do not repeat</div><div class="read-v">Bruce Kilgore drew it as a basketball shoe: perforated toe, pivot-point outsole, the strap. Blacktop <b>references the court, not the hardwood</b> — the cracked asphalt of the outdoor park, where the shoe became cultural.</div></div>
+        <div class="read-block"><div class="read-k">Season</div><div class="read-v">Summer in the city. Heat off the pavement, sun that fades your whites. The palette leans warm-neutral and <b>sun-bleached</b>, not seasonal-bright.</div></div>
+      </div>
+
+      <div class="panel">
+        <h2><span class="n">02</span>The material story</h2>
+        <div class="board">
+          <div class="swatch"><div class="chip leather"></div><div class="label"><div class="name">Asphalt tumbled leather</div><div class="spec">Full-grain, tumbled for a soft break and fine aggregate speckle. Warm charcoal, not flat black.</div><span class="placement">Quarter + toe</span></div></div>
+          <div class="swatch"><div class="chip suede"></div><div class="label"><div class="name">Court suede</div><div class="spec">Dusty matte nubuck on the mudguard. Reads worn-in on day one, then ages with grace.</div><span class="placement">Mudguard</span></div></div>
+          <div class="swatch"><div class="chip fly"></div><div class="label"><div class="name">Flyleather swoosh</div><div class="spec">50%+ recycled leather fiber, held as the crisp hit where the eye lands first.</div><span class="placement">Swoosh</span></div></div>
+          <div class="swatch"><div class="chip bleach"></div><div class="label"><div class="name">Sun-bleached line</div><div class="spec">Faded off-white on the midsole stripe and lace tips — a court line left in the sun.</div><span class="placement">Accent</span></div></div>
+        </div>
+        <p class="finish-note"><b>Finish direction:</b> matte to low-satin across the whole upper. Gloss belongs to the refined executions; the street reads honest and un-shiny.</p>
+      </div>
+    </section>
+
+    <section class="own">
+      <div class="own-card"><div class="own-k">Cost lever</div><div class="own-v">Concentrate the tumbled leather and embossed swoosh where the eye reads first — swoosh, toe, mudguard. Run a <b>standard hide on the quarter panels</b> to hold the tier.</div></div>
+      <div class="own-card"><div class="own-k">Technical watch-out</div><div class="own-v">Tumbled and oil-tanned leathers can carry enough oil content to <b>fight the cement bond</b> at the midsole. Spec controlled-oil hide and a primer step.</div></div>
+      <div class="own-card"><div class="own-k">Sustainability</div><div class="own-v">Flyleather on the swoosh plus a Nike Grind rubber outsole pushes recycled content toward the <b>Move to Zero threshold</b> without touching the hand-feel the consumer expects.</div></div>
+    </section>
+
+    <footer>
+      <div class="foot-row"><span class="sig">Jenson Nelson</span><a class="foot-link" href="work.html">Back to work →</a></div>
+      <p class="src">Self-initiated material concept. Not affiliated with, produced by, or endorsed by Nike. Material direction and sustainability references draw from Nike's public Move to Zero information.</p>
+    </footer>
+  </div>
+</body>
+</html>
