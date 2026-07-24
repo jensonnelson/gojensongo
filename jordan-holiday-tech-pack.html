@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan Holiday Knit Tech Pack - Jenson Nelson</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<style>
+  :root { --j-red: #C8102E; --j-bright: #E4002B; }
+  body { background-color: #101317; }
+  .tp-shell { padding-top: 65px; }
+  .tp-side {
+    position: fixed; top: 65px; left: 0; bottom: 0; width: 230px; z-index: 50;
+    background: rgba(10,10,10,0.88); backdrop-filter: blur(14px); border-right: 1px solid rgba(255,255,255,0.07);
+    display: flex; flex-direction: column; padding: 32px 0;
+  }
+  .tp-side-head { padding: 0 28px 24px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .tp-kicker { font-size: 10px; letter-spacing: 0.22em; color: rgba(245,244,240,0.48); text-transform: uppercase; margin-bottom: 8px; }
+  .tp-side-title { font-family: var(--serif); font-size: 22px; letter-spacing: 0.03em; line-height: 1; }
+  .tp-index { flex: 1; overflow-y: auto; padding: 18px 0; }
+  .tp-index a { display: flex; align-items: baseline; gap: 8px; padding: 9px 28px; border-left: 3px solid transparent; color: rgba(245,244,240,0.45); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .tp-index a.active { color: var(--white); border-left-color: var(--j-red); }
+  .tp-index span:first-child { font-family: var(--serif); font-size: 13px; width: 24px; color: rgba(245,244,240,0.35); }
+  .tp-index a.active span:first-child { color: var(--j-bright); }
+  .tp-side-foot { padding: 20px 28px 0; border-top: 1px solid rgba(255,255,255,0.07); font-size: 10px; letter-spacing: 0.18em; color: rgba(245,244,240,0.48); line-height: 1.8; }
+  .tp-main { margin-left: 230px; min-width: 0; }
+  .tp-section { padding: 76px 64px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .tp-hero { min-height: calc(92vh - 65px); position: relative; display: flex; align-items: flex-end; overflow: hidden; border-bottom-color: rgba(255,255,255,0.14); }
+  .tp-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; opacity: 0.32; max-width: none; }
+  .tp-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,19,23,0.6) 0%, rgba(16,19,23,0) 35%, rgba(16,19,23,0.92) 100%); }
+  .tp-hero-copy { position: relative; z-index: 1; width: 100%; }
+  .tp-eyebrow { font-size: 11px; letter-spacing: 0.25em; color: var(--j-bright); font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
+  .tp-hero .tp-eyebrow { font-size: 12px; margin-bottom: 18px; }
+  .tp-hero h1, .tp-section h2 { font-family: var(--serif); text-transform: uppercase; letter-spacing: 0.02em; line-height: 0.96; color: var(--white); }
+  .tp-hero h1 { font-size: clamp(56px, 8vw, 110px); margin: 0 0 22px; max-width: 900px; }
+  .tp-section h2 { font-size: clamp(34px, 5vw, 60px); margin: 0 0 40px; }
+  .tp-lede { font-size: 17px; color: rgba(245,244,240,0.72); max-width: 590px; line-height: 1.65; margin-bottom: 36px; }
+  .tp-stats, .tile-grid, .color-grid, .construction-grid, .trim-grid, .approval-grid { display: grid; gap: 2px; }
+  .tp-stats { grid-template-columns: repeat(5, minmax(140px, 1fr)); }
+  .tp-tile, .tp-card, .measure-cell, .measure-label { background: #131313; }
+  .tp-tile { padding: 18px 26px; }
+  .tp-tile.red { background: var(--j-red); }
+  .tp-label { font-size: 10px; letter-spacing: 0.22em; color: rgba(245,244,240,0.48); text-transform: uppercase; margin-bottom: 6px; }
+  .tp-value { font-family: var(--serif); font-size: 26px; letter-spacing: 0.03em; color: var(--white); }
+  .two-col { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start; }
+  .copy { font-size: 16px; line-height: 1.65; color: rgba(245,244,240,0.72); max-width: 760px; }
+  .callout { border-left: 3px solid var(--j-red); padding: 4px 0 4px 22px; margin: 28px 0 36px; color: rgba(245,244,240,0.72); }
+  .tile-grid { grid-template-columns: 1fr 1fr; }
+  .flat-panel { background: #f5f4f0; padding: 36px; color: #101317; }
+  .flat-panel img { width: 100%; }
+  .flat-caption { font-size: 10px; letter-spacing: 0.22em; color: #101317; font-weight: 700; text-transform: uppercase; margin-top: 16px; }
+  .color-grid { grid-template-columns: repeat(3, 1fr); }
+  .swatch { height: 180px; position: relative; }
+  .swatch-code { position: absolute; bottom: 14px; left: 20px; font-family: var(--serif); font-size: 30px; letter-spacing: 0.03em; }
+  .tp-card { padding: 24px 28px; }
+  .material-row { background: #131313; display: grid; grid-template-columns: 260px 1fr; gap: 32px; padding: 28px 32px; margin-bottom: 2px; }
+  .material-row strong, .tp-card strong { font-family: var(--serif); font-size: 24px; letter-spacing: 0.03em; font-weight: 400; }
+  .construction-grid { grid-template-columns: 1fr 1fr; }
+  .construction-grid .tp-card { display: flex; gap: 20px; align-items: baseline; }
+  .num { font-family: var(--serif); font-size: 30px; color: var(--j-bright); flex-shrink: 0; width: 36px; }
+  .band-row, .spec-row, .pack-row, .bom-row { background: #131313; display: grid; gap: 20px; padding: 16px 20px; margin-bottom: 2px; }
+  .band-row { grid-template-columns: 56px 1fr 90px; align-items: center; border-left: 3px solid rgba(255,255,255,0.14); }
+  .band-row.white { border-left-color: #F0F0F0; }
+  .band-row.red { border-left-color: var(--j-red); }
+  .trim-grid { grid-template-columns: repeat(3, 1fr); }
+  .measure-toolbar { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+  .unit-toggle button, .size-btn { border: 0; cursor: pointer; color: rgba(245,244,240,0.6); background: #1a1a1a; transition: background 0.2s, color 0.2s; }
+  .unit-toggle button { padding: 10px 22px; font: 700 11px var(--body); letter-spacing: 0.14em; }
+  .unit-toggle button.active, .size-btn.active { background: var(--j-red); color: var(--white); }
+  .measure-wrap { overflow-x: auto; }
+  .measure-grid { min-width: 860px; }
+  .measure-row, .measure-head { display: grid; grid-template-columns: 220px repeat(6, 1fr); gap: 2px; margin-bottom: 2px; }
+  .measure-label, .measure-cell, .size-btn { padding: 12px 8px; font-size: 13px; text-align: center; }
+  .measure-label { text-align: left; color: rgba(245,244,240,0.72); padding-left: 18px; }
+  .measure-head .measure-label { background: #1a1a1a; font-size: 10px; letter-spacing: 0.22em; color: rgba(245,244,240,0.48); text-transform: uppercase; }
+  .size-btn { font-family: var(--serif); font-size: 20px; letter-spacing: 0.06em; }
+  .measure-cell.active { background: rgba(200,16,46,0.16); color: var(--white); }
+  .spec-row { grid-template-columns: 150px 1fr; }
+  .pack-row { grid-template-columns: 130px 1fr; }
+  .bom-row { grid-template-columns: 1fr 90px; align-items: baseline; }
+  .bom-cost { font-family: var(--serif); font-size: 20px; text-align: right; color: var(--j-bright); }
+  .approval-grid { grid-template-columns: repeat(4, 1fr); }
+  .approval { min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; }
+  .signature { border-bottom: 1px solid rgba(255,255,255,0.14); height: 44px; }
+  .back-link { display: inline-flex; margin-top: 28px; color: var(--j-bright); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; }
+  @media (max-width: 960px) {
+    .tp-side { display: none; }
+    .tp-main { margin-left: 0; }
+    .tp-section { padding: 56px 24px; }
+    .two-col, .construction-grid, .trim-grid, .approval-grid { grid-template-columns: 1fr; }
+    .tp-stats, .color-grid { grid-template-columns: 1fr 1fr; }
+    .material-row { grid-template-columns: 1fr; gap: 12px; }
+  }
+  @media (max-width: 620px) { .tp-stats, .color-grid, .tile-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-name">JENSON NELSON</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+<div class="tp-shell">
+  <aside class="tp-side">
+    <div class="tp-side-head"><div class="tp-kicker">Selected Work</div><div class="tp-side-title">TECH PACK · JM-H26-001</div></div>
+    <div class="tp-index" id="sectionIndex">
+      <a href="#s01" class="active"><span>00</span><span>Cover</span></a>
+      <a href="#s02"><span>01</span><span>Style Summary</span></a>
+      <a href="#s03"><span>02</span><span>Colorways</span></a>
+      <a href="#s04"><span>03</span><span>Materials</span></a>
+      <a href="#s05"><span>04</span><span>Construction</span></a>
+      <a href="#s06"><span>05</span><span>Jacquard Pattern</span></a>
+      <a href="#s07"><span>06</span><span>Trims & Labels</span></a>
+      <a href="#s08"><span>07</span><span>Measurements</span></a>
+      <a href="#s09"><span>08</span><span>Knit & Quality</span></a>
+      <a href="#s10"><span>09</span><span>Packaging & BOM</span></a>
+      <a href="#s11"><span>10</span><span>Approvals</span></a>
+    </div>
+    <div class="tp-side-foot">REV 1.0 · APR 12, 2026<br>DEVELOPMENT / FIRST PROTO</div>
+  </aside>
+  <main class="tp-main">
+    <section class="tp-section tp-hero" id="s01">
+      <img src="work-jordan-2.jpg" alt="Jordan holiday jacquard sweater lifestyle image">
+      <div class="tp-hero-copy">
+        <div class="tp-eyebrow">Jordan Brand · Men's Holiday 2026</div>
+        <h1>Holiday Jacquard Knit Sweater</h1>
+        <p class="tp-lede">Fair Isle, but make it Jumpman. One apparel concept translated into a production-ready tech pack with flats, colorways, construction, graded measurements, BOM, QC, and approval checkpoints.</p>
+        <div class="tp-stats">
+          <div class="tp-tile"><div class="tp-label">Style</div><div class="tp-value">JM-H26-001</div></div>
+          <div class="tp-tile"><div class="tp-label">Season</div><div class="tp-value">Holiday 2026</div></div>
+          <div class="tp-tile"><div class="tp-label">Retail / FOB</div><div class="tp-value">$120 / $32</div></div>
+          <div class="tp-tile"><div class="tp-label">Tooling</div><div class="tp-value">Illustrator</div></div>
+          <div class="tp-tile red"><div class="tp-label">Status</div><div class="tp-value">First Proto</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="tp-section" id="s02">
+      <div class="tp-eyebrow">01 · Style Summary</div><h2>The brief, in one garment</h2>
+      <div class="two-col"><div><p class="copy">A relaxed crew neck pullover carrying an all-over holiday jacquard: Jumpman silhouettes, Christmas trees, and Nordic snowflakes arranged Fair Isle-style across horizontal bands. Deep black ground, white pattern, Gym Red 2x2 rib at neck, cuffs, and hem. Premium seasonal lifestyle, not a novelty sweater that apologizes for itself.</p><p class="callout">Every motif is true jacquard, knit in, not printed on. The floats are caught, the bands match at the seams, and the red stripe is knit in. That is the whole point.</p><div class="tile-grid"><div class="tp-tile"><div class="tp-label">Category</div><div>Men's Knitwear / Lifestyle</div></div><div class="tp-tile"><div class="tp-label">Fit</div><div>Relaxed / Standard Length</div></div><div class="tp-tile"><div class="tp-label">Silhouette</div><div>Crew neck pullover</div></div><div class="tp-tile"><div class="tp-label">Collection</div><div>Jordan Holiday Essentials</div></div></div></div><div class="flat-panel"><img src="work-jordan-1.jpg" alt="Garment flat, back view"><div class="flat-caption">Apparel visual reference: sample direction</div></div></div>
+    </section>
+    <section class="tp-section" id="s03"><div class="tp-eyebrow">02 · Colorways</div><h2>Three yarns. No negotiation.</h2><div class="color-grid"><div class="tp-card"><div class="swatch" style="background:#15151A"><div class="swatch-code">#15151A</div></div><strong>Black</strong><p>PANTONE 19-4005 TCX Black Beauty<br>Ground yarn, all panels.</p></div><div class="tp-card"><div class="swatch" style="background:#F0F0F0"><div class="swatch-code" style="color:#101317">#F0F0F0</div></div><strong>White</strong><p>PANTONE 11-0601 TCX Bright White<br>All motifs: Jumpman, trees, snowflakes.</p></div><div class="tp-card"><div class="swatch" style="background:#C8102E"><div class="swatch-code">#C8102E</div></div><strong>Gym Red</strong><p>PANTONE 19-1763 TCX Racing Red<br>Neck, cuffs, hem rib and knit-in accent stripes.</p></div></div><p class="copy" style="margin-top:24px">Lab dips required for all three yarns before bulk. Rib trim red must match across neck, cuffs, and hem. No lot variation.</p></section>
+    <section class="tp-section" id="s04"><div class="tp-eyebrow">03 · Fabric & Materials</div><h2>What it is made of</h2><div class="material-row"><strong>Body · Jacquard Knit</strong><div>Nike Sportswear Jacquard Knit: 70% cotton / 25% recycled polyester / 5% elastane, 320 GSM, 12-gauge fully fashioned jacquard, brushed interior, enzyme-washed for vintage hand feel.</div></div><div class="material-row"><strong>Rib Trim · Neck, Cuffs, Hem</strong><div>Nike Sportswear Rib: 95% cotton / 5% elastane, 380 GSM, 2x2 rib knit. 3 in width at hem, 2.5 in at cuffs, 1 in at neckline. Recovery stretch. Gym Red.</div></div><div class="material-row"><strong>Accent Stripes</strong><div>Knit-in stripe bands, same yarn composition as body, Gym Red colorway, 0.25 in width.</div></div><p class="callout">All yarns meet Nike sustainability standards: BCI or organic cotton, GRS-certified recycled polyester, OEKO-TEX Standard 100. Colorfastness minimum Grade 4 wash, Grade 4 dry rub, Grade 3 to 4 wet rub per ISO 105.</p></section>
+    <section class="tp-section" id="s05"><div class="tp-eyebrow">04 · Construction</div><h2>Nine rules of assembly</h2><div class="construction-grid" id="constructionGrid"></div></section>
+    <section class="tp-section" id="s06"><div class="tp-eyebrow">05 · Jacquard Pattern</div><h2>The band sequence</h2><div class="two-col"><div class="flat-panel"><img src="work-jordan-1.jpg" alt="Jacquard pattern reference"><div class="flat-caption">Pattern and styling reference: continuous across front and back, matched at side seams</div></div><div><div class="band-row"><div class="tp-value">A</div><div>Small diamond/dot geometric border</div><div>0.75 in</div></div><div class="band-row white"><div class="tp-value">B</div><div>Jumpman silhouettes alternating with Christmas trees</div><div>2.5 in</div></div><div class="band-row"><div class="tp-value">C</div><div>Small diamond/dot geometric border</div><div>0.75 in</div></div><div class="band-row red"><div class="tp-value">D</div><div>Gym Red horizontal accent stripe</div><div>0.25 in</div></div><div class="band-row white"><div class="tp-value">E</div><div>Large Jumpman + snowflake feature band</div><div>2 in</div></div><div class="band-row red"><div class="tp-value">F</div><div>Gym Red horizontal accent stripe</div><div>0.25 in</div></div><div class="tile-grid" style="margin-top:32px"><div class="tp-tile"><div class="tp-label">Full Repeat</div><div class="tp-value">~6.5 in</div></div><div class="tp-tile"><div class="tp-label">Max Float</div><div class="tp-value">0.5 in, caught</div></div><div class="tp-tile"><div class="tp-label">Jumpman Motif</div><div>1.75 x 1.5 in and 2.5 x 2.25 in</div></div><div class="tp-tile"><div class="tp-label">Tree / Snowflake</div><div>1.5 x 1.25 in tree and 1 x 1 in star</div></div></div></div></div></section>
+    <section class="tp-section" id="s07"><div class="tp-eyebrow">06 · Trims & Labels</div><h2>The small stuff that is not</h2><div class="trim-grid" id="trimGrid"></div></section>
+    <section class="tp-section" id="s08"><div class="tp-eyebrow">07 · Measurement Spec</div><div class="measure-toolbar"><h2>Graded, S through 3XL</h2><div class="unit-toggle"><button class="active" data-unit="in">Inches</button><button data-unit="cm">CM</button></div></div><p class="copy">Click a size to highlight its column. Sample size: L.</p><div class="measure-wrap"><div class="measure-grid" id="measureGrid"></div></div><div class="two-col" style="margin-top:40px"><p class="callout"><span class="tp-label">Tolerance</span><br>+/-0.5 in on all linear measurements; +/-5% on rib stretch. All measurements flat, relaxed, post-wash. Knit may vary +/-3% from yarn tension.</p><p class="copy"><span class="tp-label">How to measure</span><br>Chest: across front, 1 in below armhole, doubled. Body length: HPS to bottom of rib hem. Sleeve: CB neck seam to cuff edge. Hem width and cuff opening: relaxed, doubled. Armhole depth: shoulder seam straight down to underarm.</p></div></section>
+    <section class="tp-section" id="s09"><div class="tp-eyebrow">08 · Knit Spec & Quality</div><h2>12 gauge, held to grade</h2><div class="two-col"><div id="knitSpec"></div><div id="qcList"></div></div></section>
+    <section class="tp-section" id="s10"><div class="tp-eyebrow">09 · Packaging & BOM</div><h2>Folded, bagged, costed</h2><div class="two-col"><div id="packList"></div><div id="bomList"></div></div><p class="copy" style="margin-top:16px">All suppliers TBD at sourcing.</p></section>
+    <section class="tp-section" id="s11"><div class="tp-eyebrow">10 · Approvals</div><h2>Sign it or send it back</h2><div class="approval-grid"><div class="tp-card approval"><div class="tp-label">Designer</div><div><div class="signature"></div><div class="tp-label">Signature / Date</div></div></div><div class="tp-card approval"><div class="tp-label">Knitwear Tech Designer</div><div><div class="signature"></div><div class="tp-label">Signature / Date</div></div></div><div class="tp-card approval"><div class="tp-label">Product Manager</div><div><div class="signature"></div><div class="tp-label">Signature / Date</div></div></div><div class="tp-card approval"><div class="tp-label">Jordan Brand Director</div><div><div class="signature"></div><div class="tp-label">Signature / Date</div></div></div></div><a class="back-link" href="work.html#jordan-knit">Back to work</a></section>
+  </main>
+</div>
+<script>
+const construction = ['12-gauge fully fashioned jacquard: front, back, two sleeves knit separately, linked/seamed.','Crew neckline: 1 in 2x2 rib collar in Gym Red, linked attachment, coverstitched interior seam.','Set-in sleeves with flatlock seam join at shoulder and underarm.','Hem: 3 in 2x2 rib band in Gym Red, linked attachment, no roll.','Cuffs: 2.5 in 2x2 rib band in Gym Red, linked, snug recovery fit.','All interior seams flatlock or linked, no exposed raw edges.','Enzyme wash post-knitting for softened hand and controlled shrinkage.','Interior back neck tape: 0.75 in woven tape, Jordan Brand woven label centered.','No side vents, straight hem all around.'];
+const trims = [['Main Label','Woven damask: Jumpman logo + JORDAN wordmark. Center back neck interior, 2 x 0.75 in, black with white woven logo.'],['Back Neck Tape','Woven twill tape, 0.75 in wide, tonal black, covers neck seam, heat-applied.'],['Care Label','Woven satin at left interior side seam, 2 in below armhole. Fiber content, care symbols, country of origin.'],['Hang Tag','Premium cardstock, matte black, debossed Jumpman, gold foil Holiday 2026, recycled cord attachment.'],['Size Label','Woven size tab, center back neck interior below main label. Black with white size designation.'],['UPC Sticker','Applied to hang tag, standard Nike/Jordan barcode format.']];
+const pom = [['Chest (1 in below armhole)',40,42,44,46,48,50],['Body Length (HPS)',27,27.75,28.5,29.25,30,30.75],['Sleeve Length (CB neck)',33,33.75,34.5,35.25,36,36.75],['Across Shoulder',17.5,18,18.5,19,19.5,20],['Across Back (4 in below HPS)',16,17,18,19,20,21],['Neck Opening (stretched)',20,20.5,21,21.5,22,22.5],['Collar Height',1,1,1,1,1.25,1.25],['Hem Width (relaxed)',38,40,42,44,46,48],['Hem Rib Height',3,3,3,3,3,3.25],['Cuff Opening (relaxed)',8,8.5,9,9.5,10,10.5],['Cuff Rib Height',2.5,2.5,2.5,2.5,2.5,2.75],['Bicep (1 in below armhole)',16,17,18,19,20,21],['Armhole Depth',10,10.5,11,11.5,12,12.5]];
+const sizes = ['S','M','L','XL','XXL','3XL'];
+let selected = 'L'; let unit = 'in';
+function fmt(v){ return unit === 'in' ? v + '"' : (Math.round(v * 2.54 * 10) / 10) + ' cm'; }
+function renderMeasure(){ const root = document.getElementById('measureGrid'); root.innerHTML = '<div class="measure-head"><div class="measure-label">Point of measure</div>' + sizes.map(s => '<button class="size-btn '+(s===selected?'active':'')+'" data-size="'+s+'">'+s+'</button>').join('') + '</div>' + pom.map(row => '<div class="measure-row"><div class="measure-label">'+row[0]+'</div>' + row.slice(1).map((v,i)=>'<div class="measure-cell '+(sizes[i]===selected?'active':'')+'">'+fmt(v)+'</div>').join('') + '</div>').join(''); root.querySelectorAll('[data-size]').forEach(btn => btn.addEventListener('click', () => { selected = btn.dataset.size; renderMeasure(); })); }
+document.getElementById('constructionGrid').innerHTML = construction.map((text,i)=>'<div class="tp-card"><div class="num">'+String(i+1).padStart(2,'0')+'</div><div>'+text+'</div></div>').join('');
+document.getElementById('trimGrid').innerHTML = trims.map(t=>'<div class="tp-card"><strong>'+t[0]+'</strong><p>'+t[1]+'</p></div>').join('');
+renderMeasure();
+document.querySelectorAll('[data-unit]').forEach(btn => btn.addEventListener('click', () => { unit = btn.dataset.unit; document.querySelectorAll('[data-unit]').forEach(b => b.classList.toggle('active', b === btn)); renderMeasure(); }));
+const spec = [['Gauge','12 GG flat-bed jacquard knit'],['Stitch density','Body: 28 st x 36 rows per 4 in square, post-wash'],['Yarn count','Ground Ne 20/2 ring-spun cotton blend; pattern Ne 16/2'],['Knit type','True jacquard, two-color float; max float 0.5 in, caught beyond'],['Panels','Fully fashioned: front, back, left + right sleeve knit separately'],['Seaming','Shoulder linked; side + sleeve flatlock; rib attachment linked'],['Shrinkage','+3% length / +2% width built in for post-enzyme-wash spec']];
+document.getElementById('knitSpec').innerHTML = '<div class="tp-label">Knit Specification</div>' + spec.map(s=>'<div class="spec-row"><div class="tp-label">'+s[0]+'</div><div>'+s[1]+'</div></div>').join('');
+const qc = ['Enzyme wash 40C / 20 min; steam press on form; fold + poly-bag.','Pilling: min Grade 3.5, ISO 12945-2 Martindale, 2000 cycles.','Colorfastness: wash Grade 4 (ISO 105-C06); rub dry 4 / wet 3 to 4 (X12).','Dimensional stability: max +/-3% L / +/-2% W after 5 washes (AATCC 135).','Motifs centered front and back, symmetrical left-to-right.','Bands align within 0.25 in at side seams; best-effort match at armhole.','Red rib matches across neck, cuffs, hem. No lot variation.','No floats over 0.5 in inside; no holes, dropped stitches, or exterior knots.'];
+document.getElementById('qcList').innerHTML = '<div class="tp-label">Wash, Finish & QC Checkpoints</div>' + qc.map((q,i)=>'<div class="tp-card" style="display:flex;gap:16px"><div class="num">'+String(i+1).padStart(2,'0')+'</div><div>'+q+'</div></div>').join('');
+const packaging = [['Folding','Retail fold, front up, sleeves back, thirds. 12 x 10 x 2 in folded.'],['Poly bag','Clear recyclable PE, 14 x 12 in, adhesive strip, suffocation warning.'],['Tissue','Jordan black tissue, Jumpman watermark, between folds.'],['Hang tag','Right side seam, 1 in below armhole, recycled cord, double-loop.'],['Size sticker','Poly bag exterior, top right, Jordan format.'],['Carton','12 units per carton, sizes per PO ratio, double-wall corrugated.'],['Labeling','Standard shipping label: style, color, size assortment, weight, COO.']];
+document.getElementById('packList').innerHTML = '<div class="tp-label">Packaging</div>' + packaging.map(p=>'<div class="pack-row"><div class="tp-label">'+p[0]+'</div><div>'+p[1]+'</div></div>').join('');
+const bom = [['Body yarn (ground)','Ne 20/2 cotton/rPET/elastane, Black','$8.50/KG'],['Pattern yarn','Ne 16/2 cotton/rPET, White','$7.80/KG'],['Rib yarn','Ne 20/2 cotton/elastane, Gym Red','$9.20/KG'],['Woven main label','Damask, Jumpman logo','$0.12/PC'],['Care label','Woven satin, care + content','$0.08/PC'],['Hang tag','Matte black cardstock, deboss + foil','$0.35/PC'],['Back neck tape','Woven twill, 0.75 in, tonal black','$0.05/YD'],['Poly bag + tissue','Recyclable PE + branded tissue','$0.18/SET']];
+document.getElementById('bomList').innerHTML = '<div class="tp-label">Bill of Materials · Est. Unit Cost</div>' + bom.map(b=>'<div class="bom-row"><div><strong style="font-size:16px">'+b[0]+'</strong><div class="tp-label">'+b[1]+'</div></div><div class="bom-cost">'+b[2]+'</div></div>').join('');
+const links = Array.from(document.querySelectorAll('#sectionIndex a')); const sections = Array.from(document.querySelectorAll('.tp-main section[id]'));
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+e.target.id)); }}), { rootMargin: '-30% 0px -60% 0px' }); sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
