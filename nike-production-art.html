@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Production Art Portfolio | Jenson Nelson</title>
+<meta name="description" content="Apparel production art, graphics, lay downs and color design by Jenson Nelson. Prepared for the Production Artist II, Basketball Apparel Graphics role.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<style>
+  .pa-hero { padding: 150px 48px 70px; max-width: var(--page-width); margin: 0 auto; }
+  .pa-eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 24px; }
+  .pa-title { font-family: var(--serif); font-size: clamp(46px, 7vw, 100px); line-height: 0.95; letter-spacing: 0.02em; max-width: 980px; margin-bottom: 28px; }
+  .pa-title span { color: var(--orange); }
+  .pa-sub { max-width: 680px; font-size: 17px; color: var(--text-soft); margin-bottom: 36px; }
+  .pa-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .pa-index { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 64px; }
+  .pa-index a { background: var(--mid); padding: 20px 22px; color: var(--white); border-top: 2px solid transparent; display: block; }
+  .pa-index a:hover { border-top-color: var(--orange); opacity: 1; background: var(--mid-2); }
+  .pa-index .n { font-family: var(--serif); font-size: 15px; letter-spacing: 0.12em; color: var(--orange); }
+  .pa-index .t { font-family: var(--serif); font-size: 26px; letter-spacing: 0.04em; line-height: 1.05; margin-top: 4px; }
+  .pa-index .d { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+  .pa-sec { max-width: var(--page-width); margin: 0 auto; padding: 84px 48px; border-top: 1px solid var(--rule); }
+  .pa-num { font-family: var(--serif); font-size: 15px; letter-spacing: 0.22em; color: var(--orange); margin-bottom: 10px; }
+  .pa-h2 { font-family: var(--serif); font-size: clamp(38px, 5vw, 64px); line-height: 1; letter-spacing: 0.03em; margin-bottom: 10px; }
+  .pa-proj { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 28px; }
+  .pa-lead { max-width: 760px; color: var(--text-soft); font-size: 16px; margin-bottom: 36px; }
+
+  .pa-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 40px; }
+  .pa-flow > div { background: var(--mid); padding: 18px 20px; border-left: 2px solid var(--rule-strong); }
+  .pa-flow b { display: block; font-family: var(--serif); font-weight: 400; font-size: 20px; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .pa-flow p { font-size: 13px; color: var(--text-soft); line-height: 1.55; }
+
+  .pa-grid { display: grid; gap: 2px; margin-bottom: 2px; }
+  .g2 { grid-template-columns: 1fr 1fr; } .g3 { grid-template-columns: repeat(3, 1fr); } .g5 { grid-template-columns: repeat(5, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); }
+  .pa-fig { background: var(--mid); margin: 0; overflow: hidden; }
+  .pa-fig img { width: 100%; height: auto; }
+  .g3 .pa-fig img, .g4 .pa-fig img, .g5 .pa-fig img { aspect-ratio: 1 / 1; object-fit: cover; }
+  .g3 .pa-fig, .g4 .pa-fig, .g5 .pa-fig { display: flex; flex-direction: column; }
+  .g3 .pa-fig figcaption, .g4 .pa-fig figcaption, .g5 .pa-fig figcaption { margin-top: auto; }
+  .pa-fig.paper { background: #f5f4f0; padding: 28px; display: flex; align-items: center; justify-content: center; }
+  .pa-fig.paper img { max-height: 620px; width: auto; }
+  .pa-fig figcaption { padding: 12px 16px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); background: var(--mid); }
+  .pa-fig.paper figcaption { position: absolute; }
+
+  .pa-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 44px; }
+  .pa-cols h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .pa-cols ul { list-style: none; }
+  .pa-cols li { font-size: 14px; color: var(--text-soft); padding: 9px 0; border-bottom: 1px solid var(--rule); }
+  .pa-cols li b { color: var(--white); font-weight: 500; }
+  .pa-link { display: inline-block; margin-top: 26px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+
+  .pa-chips { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; margin-bottom: 2px; }
+  .pa-chip { padding: 70px 14px 14px; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .pa-chip b { font-family: var(--serif); font-weight: 400; font-size: 22px; letter-spacing: 0.06em; }
+  .pa-chip span { font-size: 11px; letter-spacing: 0.1em; opacity: 0.75; }
+  .pa-chips.three { grid-template-columns: repeat(3, 1fr); margin-top: 24px; }
+
+  .pa-tools { max-width: var(--page-width); margin: 0 auto; padding: 70px 48px; border-top: 1px solid var(--rule); }
+  .pa-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .pa-tags span { border: 1px solid var(--rule-strong); padding: 7px 14px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); }
+  .pa-note { max-width: var(--page-width); margin: 0 auto; padding: 0 48px 90px; font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    .pa-hero, .pa-sec, .pa-tools, .pa-note { padding-left: 22px; padding-right: 22px; }
+    .pa-hero { padding-top: 120px; }
+    .pa-index, .pa-flow, .g3, .g4, .g5, .pa-chips { grid-template-columns: 1fr 1fr; }
+    .g2, .pa-cols { grid-template-columns: 1fr; gap: 28px; }
+    .pa-fig.paper img { max-height: 420px; }
+  }
+  @media (max-width: 520px) { .pa-index, .pa-flow, .g3, .g4, .g5 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="index.html">JENSON NELSON</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a class="nav-cta" href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="pa-hero">
+  <div class="pa-eyebrow">Production Art Portfolio · Apparel Graphics</div>
+  <h1 class="pa-title">FROM FLAT TO FACTORY<span>.</span> CLEAN FILES, EXACT CALLOUTS, CLEAR COMMUNICATION.</h1>
+  <p class="pa-sub">Four projects, one for each thing a production artist owns: the schematic, the graphic, the lay down, and the color. Each one shows the workflow, not just the finished image.</p>
+  <div class="pa-actions">
+    <a class="btn-primary" href="#s1">See the work</a>
+    <a class="btn-secondary" href="jenson-nelson-production-artist-resume.pdf">Resume (PDF)</a>
+  </div>
+  <div class="pa-index" role="navigation" aria-label="Sections">
+    <a href="#s1"><div class="n">01</div><div class="t">Schematics</div><div class="d">Tech pack, flats, specs</div></a>
+    <a href="#s2"><div class="n">02</div><div class="t">Apparel Graphics</div><div class="d">Repeats and allover print</div></a>
+    <a href="#s3"><div class="n">03</div><div class="t">Line Art + Lay Downs</div><div class="d">Placement on the garment</div></a>
+    <a href="#s4"><div class="n">04</div><div class="t">Color Design</div><div class="d">Palettes and colorways</div></a>
+  </div>
+</header>
+
+<!-- 01 -->
+<section class="pa-sec" id="s1">
+  <div class="pa-num">01</div>
+  <h2 class="pa-h2">PRODUCTION ART SCHEMATICS</h2>
+  <div class="pa-proj">Jordan Holiday Jacquard Knit · Style JM-H26-001 · Self-initiated</div>
+  <p class="pa-lead">A full development package for a knit-in jacquard sweater, built so a vendor can quote, sample and produce it without a follow-up call. The page is structured like a working tech pack, with click-through graded measurements.</p>
+
+  <div class="pa-flow">
+    <div><b>Brief</b><p>Streetwear and lifestyle concept translated into a 12-gauge jacquard knit.</p></div>
+    <div><b>Artwork</b><p>Knit-in motif drawn as flat vector, with matched pattern bands A to F.</p></div>
+    <div><b>Specs</b><p>Materials, construction rules, trims, graded measurements S to 3XL.</p></div>
+    <div><b>Handoff</b><p>Knit and QC spec, packaging, BOM and approval gates for the vendor.</p></div>
+  </div>
+
+  <div class="pa-grid g2">
+    <figure class="pa-fig paper"><img src="img/jordan-sweater-flat.png" alt="Jordan holiday jacquard sweater flat, back view" loading="lazy"></figure>
+    <div class="pa-fig" style="padding:36px; display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-family:var(--serif); font-size:34px; letter-spacing:0.05em; line-height:1.05; margin-bottom:14px;">WHAT A VENDOR GETS</div>
+      <ul style="list-style:none;">
+        <li style="padding:8px 0; border-bottom:1px solid var(--rule); color:var(--text-soft); font-size:14px;"><b style="color:var(--white); font-weight:500;">Flats and schematics</b> with pattern bands and rib trim called out</li>
+        <li style="padding:8px 0; border-bottom:1px solid var(--rule); color:var(--text-soft); font-size:14px;"><b style="color:var(--white); font-weight:500;">Three colorways</b> with Pantone references</li>
+        <li style="padding:8px 0; border-bottom:1px solid var(--rule); color:var(--text-soft); font-size:14px;"><b style="color:var(--white); font-weight:500;">Trim callouts:</b> main label, neck tape, care label, hang tag, size label, UPC</li>
+        <li style="padding:8px 0; border-bottom:1px solid var(--rule); color:var(--text-soft); font-size:14px;"><b style="color:var(--white); font-weight:500;">13 points of measure</b> graded S to 3XL, inches and cm</li>
+        <li style="padding:8px 0; color:var(--text-soft); font-size:14px;"><b style="color:var(--white); font-weight:500;">BOM and approval gates</b> so changes are tracked to sign-off</li>
+      </ul>
+      <a class="btn-secondary" style="margin-top:26px; align-self:flex-start;" href="jordan-holiday-tech-pack.html">Open the full tech pack</a>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="pa-sec" id="s2">
+  <div class="pa-num">02</div>
+  <h2 class="pa-h2">GRAPHIC DESIGN FOR APPAREL</h2>
+  <div class="pa-proj">INDUSTRY · Allover print and graphics capsule · Self-initiated concept</div>
+  <p class="pa-lead">Four original prints drawn from things already in a restaurant: type, paperwork, line and stain. Each is built as a production repeat, with a clear rule for how it scales, what technique prints it, and where it goes on the garment.</p>
+
+  <div class="pa-flow">
+    <div><b>Brief</b><p>Staff apparel for hospitality workers, sold in volume to restaurant groups.</p></div>
+    <div><b>Artwork</b><p>Hand-drawn source rebuilt as clean, seamless repeat tiles.</p></div>
+    <div><b>Specs</b><p>Scale, technique and application set per print, per garment.</p></div>
+    <div><b>Handoff</b><p>One print engine. Season two recolors instead of redrawing.</p></div>
+  </div>
+
+  <div class="pa-grid g2">
+    <figure class="pa-fig"><img src="img/INDUSTRY_GUEST_CHECK_1536x1024.jpg" alt="Guest Check seamless repeat in three colorways" loading="lazy"><figcaption>Guest Check · seamless repeat · 3 colorways</figcaption></figure>
+    <figure class="pa-fig"><img src="img/INDUSTRY_TICKET_RAIL_1536x1024.jpg" alt="Ticket Rail continuous type print in three colorways" loading="lazy"><figcaption>Ticket Rail · continuous feed, placed not repeated</figcaption></figure>
+  </div>
+  <div class="pa-grid g2">
+    <figure class="pa-fig"><img src="img/INDUSTRY_BEHIND_1536x1024.jpg" alt="Behind floor path print in three colorways" loading="lazy"><figcaption>Behind · floor path system · three-color line print</figcaption></figure>
+    <figure class="pa-fig"><img src="img/INDUSTRY_TABLE_RINGS_1536x1024.jpg" alt="Table Rings large organic print in three colorways" loading="lazy"><figcaption>Table Rings · large scale, placed sublimation</figcaption></figure>
+  </div>
+
+  <div class="pa-cols">
+    <div>
+      <h3>HOW EACH PRINT IS BUILT</h3>
+      <ul>
+        <li><b>Ticket Rail:</b> built from a text file, so a restaurant group's own language drops in with no redraw</li>
+        <li><b>Guest Check:</b> seamless grid that recolors and rescales without new artwork</li>
+        <li><b>Behind:</b> three-color line print at mid scale</li>
+        <li><b>Table Rings:</b> large scale, engineered so no two pieces crop the same</li>
+      </ul>
+    </div>
+    <div>
+      <h3>GRAPHIC HITS</h3>
+      <ul>
+        <li><b>INDUSTRY:</b> wordmark, made to stay clear small, woven or embroidered</li>
+        <li><b>86:</b> chest hit, hem tag or sock cuff</li>
+        <li><b>ALL DAY:</b> repeat band along a short hem</li>
+        <li><b>HEARD:</b> front and center on a hat, tee or apron</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="pa-sec" id="s3">
+  <div class="pa-num">03</div>
+  <h2 class="pa-h2">APPAREL LINE ART + LAY DOWNS</h2>
+  <div class="pa-proj">Placement on tees, aprons and headwear · Jordan sweater flat + INDUSTRY</div>
+  <p class="pa-lead">Every print is sized and placed per garment so the repeat reads correctly on the body. Below: the same system on tees, aprons and headwear, where the pocket, strap and crown change how the art has to sit.</p>
+
+  <div class="pa-grid g5">
+    <figure class="pa-fig"><img src="img/industry-tee-guest-check-front.jpg" alt="Guest Check allover print tee, front" loading="lazy"><figcaption>Tee · Guest Check · allover</figcaption></figure>
+    <figure class="pa-fig"><img src="img/industry-tee-ticket-rail.jpg" alt="Ticket Rail placed type tee" loading="lazy"><figcaption>Tee · Ticket Rail · placed</figcaption></figure>
+    <figure class="pa-fig"><img src="img/industry-apron-behind.jpg" alt="Behind print apron with pocket" loading="lazy"><figcaption>Apron · Behind · pocket match</figcaption></figure>
+    <figure class="pa-fig"><img src="img/industry-apron-heard.jpg" alt="Apron with HEARD graphic hit" loading="lazy"><figcaption>Apron · HEARD · chest hit</figcaption></figure>
+    <figure class="pa-fig"><img src="img/industry-beanie-all-day.jpg" alt="Beanie with ALL DAY embroidery" loading="lazy"><figcaption>Beanie · ALL DAY · embroidery</figcaption></figure>
+  </div>
+
+  <div class="pa-grid g2" style="margin-top:2px;">
+    <figure class="pa-fig paper" style="grid-column:1 / -1; padding:20px;"><svg style="width:100%;max-width:860px;height:auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" role="img" aria-label="INDUSTRY 86 basketball jersey, front and back">
+<rect width="860" height="500" fill="#f5f4f0"/>
+<g transform="translate(10,10)"><g>
+<path d="M120 30 L165 30 Q175 110 200 112 Q225 110 235 30 L280 30 Q290 115 322 150 L330 450 L70 450 L78 150 Q110 115 120 30 Z" fill="#101114" stroke="#101114" stroke-width="2" stroke-linejoin="round"/>
+<path d="M165 30 Q175 110 200 112 Q225 110 235 30" fill="none" stroke="#C95732" stroke-width="9" stroke-linecap="round"/>
+<path d="M120 30 Q110 115 78 150" fill="none" stroke="#C95732" stroke-width="9" stroke-linecap="round"/>
+<path d="M280 30 Q290 115 322 150" fill="none" stroke="#C95732" stroke-width="9" stroke-linecap="round"/>
+<path d="M86 160 L79 446" fill="none" stroke="#D8D3C4" stroke-width="5"/>
+<path d="M314 160 L321 446" fill="none" stroke="#D8D3C4" stroke-width="5"/>
+<path d="M75 438 L325 438" fill="none" stroke="#C95732" stroke-width="10"/>
+<text x="200" y="170" font-family="'Bebas Neue','Impact','Haettenschweiler','Arial Narrow',sans-serif" font-size="30" letter-spacing="7" text-anchor="middle" fill="#D8D3C4">INDUSTRY</text>
+<text x="200" y="335" font-family="'Bebas Neue','Impact','Haettenschweiler','Arial Narrow',sans-serif" font-size="190" text-anchor="middle" fill="#D8D3C4" stroke="#C95732" stroke-width="7" paint-order="stroke" stroke-linejoin="round">86</text>
+</g></g>
+<g transform="translate(450,10)"><g>
+<path d="M120 30 L165 30 Q185 64 200 64 Q215 64 235 30 L280 30 Q290 115 322 150 L330 450 L70 450 L78 150 Q110 115 120 30 Z" fill="#101114" stroke="#101114" stroke-width="2" stroke-linejoin="round"/>
+<path d="M165 30 Q185 64 200 64 Q215 64 235 30" fill="none" stroke="#C95732" stroke-width="9" stroke-linecap="round"/>
+<path d="M120 30 Q110 115 78 150" fill="none" stroke="#C95732" stroke-width="9" stroke-linecap="round"/>
+<path d="M280 30 Q290 115 322 150" fill="none" stroke="#C95732" stroke-width="9" stroke-linecap="round"/>
+<path d="M86 160 L79 446" fill="none" stroke="#D8D3C4" stroke-width="5"/>
+<path d="M314 160 L321 446" fill="none" stroke="#D8D3C4" stroke-width="5"/>
+<path d="M75 438 L325 438" fill="none" stroke="#C95732" stroke-width="10"/>
+<text x="200" y="160" font-family="'Bebas Neue','Impact','Haettenschweiler','Arial Narrow',sans-serif" font-size="34" letter-spacing="8" text-anchor="middle" fill="#D8D3C4">INDUSTRY</text>
+<text x="200" y="370" font-family="'Bebas Neue','Impact','Haettenschweiler','Arial Narrow',sans-serif" font-size="250" text-anchor="middle" fill="#D8D3C4" stroke="#C95732" stroke-width="8" paint-order="stroke" stroke-linejoin="round">86</text>
+</g></g>
+<g font-family="'DM Sans',Arial,sans-serif" font-size="11" letter-spacing="3" fill="#101114" text-anchor="middle"><text x="210" y="488">FRONT</text><text x="650" y="488">BACK</text></g>
+</svg></figure>
+  </div>
+  <div class="pa-cols" style="margin-top:28px; gap:64px;">
+    <div>
+      <h3>BASKETBALL APPLICATION: THE 86 JERSEY</h3>
+      <ul>
+        <li><b>Why 86:</b> kitchen shorthand for out of stock, and the number on the jersey</li>
+        <li><b>Front:</b> 86 centered with INDUSTRY wordmark above, Bleach on Service Black with an Oven outline</li>
+        <li><b>Back:</b> INDUSTRY nameplate over an oversized 86</li>
+        <li><b>Trim:</b> Oven neck and armhole binding, Bleach side panel stripe, Oven hem band</li>
+      </ul>
+    </div>
+    <div>
+      <h3>PRODUCTION NOTES (CONCEPT)</h3>
+      <ul>
+        <li><b>Numerals:</b> built as a two-color vector, ready for heat transfer or screen print</li>
+        <li><b>Colors:</b> three flat colors, no gradients, simple separations</li>
+        <li><b>Wordmark:</b> one size for front and back, clear at small scale</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pa-cols">
+    <div>
+      <h3>LAY DOWN NOTES</h3>
+      <ul>
+        <li><b>Allover (AOP):</b> repeat tiles scaled to the body, with sleeves rotated so type stays readable</li>
+        <li><b>Placed:</b> Ticket Rail and graphic hits positioned, not repeated</li>
+        <li><b>Pocket and strap:</b> pattern breaks aligned so seams land cleanly</li>
+        <li><b>Headwear:</b> crown, cuff and panel placement per hat style</li>
+      </ul>
+    </div>
+    <div>
+      <h3>FLAT LINE ART</h3>
+      <ul>
+        <li><b>Jordan sweater flat:</b> vector line art with bands and trim shown, used in the tech pack</li>
+        <li><b>Construction clarity:</b> seams, rib and trim drawn so the vendor can read it</li>
+      </ul>
+      <a class="pa-link" href="jordan-holiday-tech-pack.html">See the flat in the tech pack</a>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="pa-sec" id="s4">
+  <div class="pa-num">04</div>
+  <h2 class="pa-h2">COLOR DESIGN</h2>
+  <div class="pa-proj">INDUSTRY palette · Jordan colorways</div>
+  <p class="pa-lead">Hospitality is hard on color: heat, bleach, grease, sweat and forty washes a season. The INDUSTRY palette is designed around that, so wear becomes part of the range. The Jordan sweater carries a tighter three-yarn story.</p>
+
+  <div class="pa-chips">
+    <div class="pa-chip" style="background:#101114; border:1px solid var(--rule-strong);"><b>Service Black</b><span>#101114</span></div>
+    <div class="pa-chip" style="background:#D8D3C4; color:#101114;"><b>Bleach</b><span>#D8D3C4</span></div>
+    <div class="pa-chip" style="background:#D8C66B; color:#101114;"><b>Ticket</b><span>#D8C66B</span></div>
+    <div class="pa-chip" style="background:#789A9D; color:#101114;"><b>Walk-In</b><span>#789A9D</span></div>
+    <div class="pa-chip" style="background:#C95732;"><b>Oven</b><span>#C95732</span></div>
+    <div class="pa-chip" style="background:#18283D;"><b>Last Call</b><span>#18283D</span></div>
+  </div>
+  <div class="pa-chips three">
+    <div class="pa-chip" style="background:#15151A; border:1px solid var(--rule-strong);"><b>Black</b><span>PANTONE 19-4005 TCX · #15151A</span></div>
+    <div class="pa-chip" style="background:#F0F0F0; color:#101114;"><b>White</b><span>PANTONE 11-0601 TCX · #F0F0F0</span></div>
+    <div class="pa-chip" style="background:#C8102E;"><b>Gym Red</b><span>PANTONE 19-1763 TCX · #C8102E</span></div>
+  </div>
+
+  <div class="pa-grid g3" style="margin-top:24px;">
+    <figure class="pa-fig"><img src="img/industry-apron-guest-check.jpg" alt="Guest Check in Ticket colorway on an apron" loading="lazy"><figcaption>Guest Check · Ticket colorway</figcaption></figure>
+    <figure class="pa-fig"><img src="img/industry-tee-ticket-rail.jpg" alt="Ticket Rail in Service Black" loading="lazy"><figcaption>Ticket Rail · Service Black</figcaption></figure>
+    <figure class="pa-fig"><img src="img/industry-cap-table-rings.jpg" alt="Table Rings print on a five-panel cap" loading="lazy"><figcaption>Table Rings · tonal on black</figcaption></figure>
+  </div>
+
+  <div class="pa-cols">
+    <div>
+      <h3>HOW THE COLOR WORKS</h3>
+      <ul>
+        <li><b>Grounds:</b> Service Black for everything, because the floor already chose it</li>
+        <li><b>Broken color:</b> cold neutrals and mid-tones hide what a long shift leaves behind</li>
+        <li><b>One hit:</b> Ticket yellow and Oven as small accents pulled from service</li>
+      </ul>
+    </div>
+    <div>
+      <h3>SEASON TWO</h3>
+      <ul>
+        <li><b>Carry:</b> Ticket Rail, recolor only</li>
+        <li><b>Refresh:</b> Guest Check, recolor and rescale</li>
+        <li><b>Replace:</b> Table Rings, rebuilt against the season</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pa-tools">
+  <div class="pa-num">TOOLS AND PROCESS</div>
+  <div class="pa-tags">
+    <span>Adobe Illustrator</span><span>Photoshop</span><span>InDesign</span><span>Acrobat</span><span>CLO 3D</span><span>Figma</span><span>Miro</span><span>Airtable</span><span>PLM and SAP</span>
+    <span>Screen Print</span><span>Heat Transfers</span><span>Patches</span><span>Sublimation</span><span>Allover Print</span><span>Seamless Repeats</span><span>Tech Packs</span><span>Trim Callouts</span><span>Strike-off Review</span>
+  </div>
+</section>
+
+<p class="pa-note">Jordan Holiday Knit and INDUSTRY are self-initiated concept projects. INDUSTRY is not affiliated with, endorsed by, or produced for HOKA or Deckers Brands. All artwork is original, and every garment shown is concept visualization, not a physical sample. Prepared for the Production Artist II, Basketball Apparel Graphics role.</p>
+
+<footer style="border-top:1px solid var(--rule); padding:34px 48px; text-align:center; font-size:12px; color:var(--text-muted);">
+  <a href="index.html">Home</a> &nbsp;&middot;&nbsp; <a href="work.html">Work</a> &nbsp;&middot;&nbsp; <a href="about.html">About</a> &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a>
+</footer>
+
+</body>
+</html>
