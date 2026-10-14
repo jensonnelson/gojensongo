@@ -10,7 +10,7 @@
   --case-muted: rgba(245, 245, 245, 0.7);
   --case-max: 1180px;
   background:
-    radial-gradient(circle at 12% 16%, rgba(217,80,58, 0.16), transparent 30%),
+    radial-gradient(circle at 12% 16%, rgba(224,90,95, 0.16), transparent 30%),
     radial-gradient(circle at 78% 4%, rgba(154, 123, 50, 0.18), transparent 26%),
     linear-gradient(180deg, #101010 0%, var(--black) 42%, #111 100%);
   color: var(--white);
