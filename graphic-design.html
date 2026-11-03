@@ -78,6 +78,18 @@
   .pa-fig.flat { background:#f5f4f0; display:flex; align-items:center; justify-content:center; padding:28px; }
   .pa-fig.flat img { max-height: 560px; width:auto; }
   .pa-fig.crop img { aspect-ratio: 4 / 3; object-fit: cover; object-position: center top; }
+
+  .flat-sheet { position: relative; background: #f5f4f0; color: #101317; padding: 54px 36px 30px;
+    background-image: linear-gradient(rgba(16,19,23,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(16,19,23,0.08) 1px, transparent 1px);
+    background-size: 40px 40px; background-position: center top; }
+  .flat-sheet::before, .flat-sheet::after { content: ""; position: absolute; width: 22px; height: 22px; border: 2px solid #C8102E; }
+  .flat-sheet::before { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
+  .flat-sheet::after { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+  .flat-sheet .fs-tag { position: absolute; top: 16px; font-family: 'Bebas Neue', Impact, sans-serif; font-size: 15px; letter-spacing: 0.14em; color: #101317; }
+  .flat-sheet .fs-tag.left { left: 48px; } .flat-sheet .fs-tag.right { right: 48px; color: #C8102E; }
+  .flat-sheet img { display: block; width: 100%; height: auto; filter: drop-shadow(0 22px 28px rgba(16,19,23,0.28)); }
+  .flat-sheet .fs-cap { display: flex; justify-content: space-between; gap: 16px; margin-top: 18px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: #101317; }
+  .flat-sheet .fs-cap span:last-child { color: rgba(16,19,23,0.55); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -184,7 +196,7 @@
     <figure class="pa-fig wide"><img src="work-jordan-1.jpg" alt="Jordan holiday sweater, lifestyle" loading="lazy"><figcaption>Lifestyle</figcaption></figure>
   </div>
   <div class="pa-grid g2">
-    <figure class="pa-fig flat"><img src="img/jordan-sweater-flat.png" alt="Jordan holiday sweater flat" loading="lazy"></figure>
+    <div class="flat-sheet"><span class="fs-tag left">BACK VIEW</span><span class="fs-tag right">JM-H26-001</span><img src="img/jordan-sweater-flat.png" alt="Jordan holiday jacquard sweater, garment flat, back view" loading="lazy"><div class="fs-cap"><span>Garment flat: back view</span><span>Tech pack JM-H26-001</span></div></div>
     <div class="pa-fig" style="padding:36px; display:flex; flex-direction:column; justify-content:center;">
       <div style="font-family:var(--serif); font-size:34px; letter-spacing:0.05em; line-height:1.05; margin-bottom:14px;">COLOR STORY</div>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:18px;">
